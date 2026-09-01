@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Camera Web</title>
+</head>
+
+<body>
+
+    <h1>Camera Web</h1>
+
+    <p>Teste de acesso à câmera</p>
+
+    <video id="camera" autoplay playsinline></video>
+
+    <script>
+
+        async function iniciarCamera() {
+
+            try {
+
+                const stream = await navigator.mediaDevices.getUserMedia({
+                    video: true,
+                    audio: false
+                });
+
+                const video = document.getElementById("camera");
+
+                video.srcObject = stream;
+
+            } catch (erro) {
+
+                console.error("Erro ao acessar a câmera:", erro);
+
+            }
+
+        }
+
+        iniciarCamera();
+
+    </script>
+
+</body>
+
+</html>
