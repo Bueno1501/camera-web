@@ -103,8 +103,14 @@
 
             console.log("Vídeo recebido!");
 
-            videoRemoto.srcObject =
-                evento.streams[0];
+            if(!videoRemoto.srcObject) {
+                
+                videoRemoto.srcObject =
+                    new MediaStream();
+            }
+
+
+            videoRemoto.srcObject.addTrack(evento.track);
 
         };
 
